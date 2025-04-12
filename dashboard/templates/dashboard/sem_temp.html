@@ -1,0 +1,955 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en" light-mode="dark">
+  <head>
+    <title>SnapView | LearnEase</title>
+
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1" />
+    <meta name="keywords" content="portfolio, memories, LearnEase, slideshow" />
+    <meta name="description" content="Relive your semester memories through this beautifully crafted slideshow." />
+
+        <!-- Robot.txt -->
+        <meta name="robots" content="index,follow" />
+        <meta name="Googlebot" content="index,follow" />
+        <meta name="AdsBot-Google" content="index,follow" />
+    
+        <meta
+          property="og:site_name"
+          content="https://portfolio.smaranjitghose.codes/sem_temp.html"
+        />
+        <meta property="og:title" content="Tamanna Parmar | SnapView" />
+        <meta
+          property="og:description"
+          content="This project serves free and beautiful portfolio template for everyone. Anyone can showcase their work including moocs, education, projects, experience,etc. to the world."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://portfolio.smaranjitghose.codes/sem_temp.html"
+        />
+        <meta name="twitter:card" content="summary" />
+        <meta
+          name="twitter:site"
+          content="https://portfolio.smaranjitghose.codes/sem_temp.html"
+        />
+    
+        <meta name="application-name" content="Tamanna Parmar | SnapView" />
+        <meta
+          name="apple-mobile-web-app-title"
+          content="Tamanna Parmar | SnapView"
+        />
+        <meta
+          name="summary"
+          content="An open source project aimed at providing free and beautiful templates to everyone for building their portfolio websites and showcase their work to the world."
+        />
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+
+    <!--For Dark/Light mode Toggle-->
+    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
+
+    <!-- Loading external font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Loading animation stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- FA CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      type="text/css"
+    />
+
+    <!-- Font Awesome Script -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="assets/css/hover-min.css" />
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    
+    <!-- Preloader stylesheet -->
+    <link rel="stylesheet" href="{% static 'assets/css/preloader.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/sem_temp.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/cursor.css' %}" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'assets/images/favicon.png' %}" type="image/png" />
+
+    <!-- Additional Scripts -->
+    <script defer src="{% static 'assets/js/dynamicTitle.js' %}"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M11CMZ12Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-M11CMZ12Q');
+    </script>
+
+
+    
+<!-- 
+  - preload images
+-->
+<link rel="preload" as="image" href="{% static 'assets/images/hero-bg.svg' %}">
+<link rel="preload" as="image" href="{% static 'assets/images/hero-banner-1.jpg' %}">
+<link rel="preload" as="image" href="{% static 'assets/images/hero-banner-2.jpg' %}">
+<link rel="preload" as="image" href="{% static 'assets/images/hero-shape-1.svg' %}">
+<link rel="preload" as="image" href="{% static 'assets/images/hero-shape-2.png' %}">
+
+
+    <link rel="stylesheet" href="{% static 'assets/css/categories.css' %}">
+
+    <style>
+      html, body {
+          overflow: auto !important;
+          position: static !important; /* Ensure proper positioning */
+      }
+
+      .footer-list-title {
+        color: #003366; /* Dark blue color */
+        font-weight: bold; /* Optional: Make the text bold */
+        font-size: 1.2rem; /* Optional: Adjust font size */
+        margin: 0; /* Optional: Remove default margin */
+      }      
+    </style>
+    
+
+
+  </head>
+
+  <body class="no-scroll-preload">
+    <!-- Loader -->
+    <div class="loader-container">
+      <div class="atom">
+        <div class="electron"></div>
+        <div class="electron-alpha"></div>
+        <div class="electron-omega"></div>
+      </div>
+    </div>
+
+
+     <!-- SlideShow_Start -->
+    <!-- Semester Memories Section -->
+    <div class="sem_temp_div">
+      <div class="sem_temp_shutters">
+        <div class="left-door"></div>
+        <div class="right-door"></div>
+      </div>
+      <div class="sem_temp_content">
+        <h1 class="text-center" style="font-size: 1in; font-weight: bold; font-family: 'Arial, sans-serif'; color: #ffffff; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);">
+          LearnEase
+      </h1>
+      <h2 style="font-size: 0.4in; font-weight: bold; font-family: 'Georgia, serif'; color:rgb(143, 230, 246); text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);">
+          
+        {% comment %} -By Tamanna Parmar  {% endcomment %}
+
+      </h2>
+      
+        <p style="font-size: 0.2in; font-weight: bold; font-family: 'serif'; color:rgb(157, 244, 166); text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);">
+          Develop a passion for learning. If you do, you will never cease to grow.
+        </p>
+      </div>
+    </div>
+    
+
+
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const semTempDiv = document.querySelector(".sem_temp_div");
+    const images = [
+      "{% static 'images/slide1.jpg' %}",
+      "{% static 'images/slide2.jpg' %}",
+      "{% static 'images/slide3.jpg' %}",
+      "{% static 'images/slide4.jpg' %}",
+    ];
+  
+    let currentIndex = 0;
+  
+    function changeBackground() {
+      currentIndex = (currentIndex + 1) % images.length; // Cycle through images
+      semTempDiv.style.backgroundImage = `url('${images[currentIndex]}')`;
+    }
+  
+    // Change background image every time the doors close
+    setInterval(() => {
+      semTempDiv.classList.add("door-close");
+      setTimeout(() => {
+        changeBackground();
+        semTempDiv.classList.remove("door-close");
+      }, 1500); // Match this duration with your door close animation
+    }, 5000); // Adjust time for the slideshow interval
+  });
+  
+</script>
+
+ <!-- SlideShow_Over -->
+
+
+    <!-- Cursor -->
+    <div class="cursor-dot-outline"></div>
+    <div class="cursor-dot"></div>
+
+     <!-- Google Analytics -->
+     <script
+     async
+     src="https://www.googletagmanager.com/gtag/js?id=G-G6D61F5TL4"
+   ></script>
+   <!-- Fetching our Google Tag Manager -->
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="{% static 'assets/js/sem_temp.js' %}"></script>
+
+    <script src="{% static 'assets/js/cursor.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+
+
+
+      <!-- 
+        - #CATEGORY
+      -->
+
+      <section class="section category" aria-label="category">
+        <div class="container">
+    
+            <p class="section-subtitle">Explore Tech skills</p>
+    
+            <h2 class="h2 section-title">
+                Interactive <span class="span">Learning</span> for Every Student.
+            </h2>
+    
+            <p class="section-text">
+                Empower your education journey with a variety of online classes designed to suit your learning style.
+            </p>
+    
+            <ul class="grid-list">
+    
+                <!-- HTML -->
+                <li>
+                    <div class="category-card" style="--color: 170, 75%, 41%">
+    
+                      <div class="card-icon" 
+                      style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; 
+                             display: flex; align-items: center; justify-content: center; 
+                             background-color: #ffffff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);">
+                     <img src="{% static 'assets/images/html.png' %}" 
+                          alt="Online Degree Programs" 
+                          style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                 
+                        <h3 class="h3">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" class="card-title">HTML-HyperText Markup Language</a>
+                        </h3>
+    
+                        <p class="card-text">
+                          The foundation of every webpage, structuring content on the web.
+                        </p>
+    
+                        <span class="card-badge">HTML Course</span>
+    
+                    </div>
+                </li>
+
+
+                <!-- CSS -->
+                <li>
+                  <div class="category-card" style="--color: 229, 75%, 58%">
+  
+                    <div class="card-icon" 
+                    style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; 
+                           display: flex; align-items: center; justify-content: center; 
+                           background-color: #ffffff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);">
+                   <img src="{% static 'assets/images/css.png' %}" 
+                        alt="Online Degree Programs" 
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+               
+  
+                      <h3 class="h3">
+                          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" class="card-title">CSS-Cascading Style Sheets</a>
+                      </h3>
+  
+                      <p class="card-text">
+                        Enhance your website with styles, colors, and layouts.
+                      </p>
+  
+                      <span class="card-badge">CSS Course</span>
+  
+                  </div>
+              </li>
+  
+    
+                <!-- JAVASCRIPT -->
+                <li>
+                    <div class="category-card" style="--color: 351, 83%, 61%">
+    
+                      <div class="card-icon" 
+                      style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; 
+                             display: flex; align-items: center; justify-content: center; 
+                             background-color: #ffffff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);">
+                     <img src="{% static 'assets/images/js.jpg' %}" 
+                          alt="Online Degree Programs" 
+                          style="width: 100%; height: 100%; object-fit: cover;">
+                      </div>
+                 
+    
+                        <h3 class="h3">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" class="card-title">JavaScript scripting language</a>
+                        </h3>
+    
+                        <p class="card-text">
+                          Make websites dynamic and interactive with JavaScript.
+                        </p>
+    
+                        <span class="card-badge">JS Course</span>
+    
+                    </div>
+                </li>
+    
+                
+                <!-- PYTHON -->
+                <li>
+                    <div class="category-card" style="--color: 42, 94%, 55%">
+    
+                      <div class="card-icon" 
+                      style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; 
+                             display: flex; align-items: center; justify-content: center; 
+                             background-color: #ffffff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);">
+                     <img src="{% static 'assets/images/python.jpg' %}" 
+                          alt="Online Degree Programs" 
+                          style="width: 100%; height: 100%; object-fit: cover;">
+                      </div>
+                 
+    
+                        <h3 class="h3">
+                            <a href="https://docs.python.org/3/" class="card-title">python programming language</a>
+                        </h3>
+    
+                        <p class="card-text">
+                          A versatile language for web, data analysis, AI, and more
+                        </p>
+    
+                        <span class="card-badge">Python Course</span>
+    
+                    </div>
+                </li>
+
+
+
+                <!-- Node.js. -->
+                <li>
+                  <div class="category-card" style="--color: 42, 94%, 55%">
+  
+                    <div class="card-icon" 
+                    style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; 
+                           display: flex; align-items: center; justify-content: center; 
+                           background-color: #ffffff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);">
+                   <img src="{% static 'assets/images/node.jpg' %}" 
+                        alt="Online Degree Programs" 
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+               
+  
+                      <h3 class="h3">
+                          <a href="https://nodejs.org/en/docs/" class="card-title">Node.js <br> JavaScript runtime</a>
+                      </h3>
+  
+                      <p class="card-text">
+                        Build scalable server-side applications with Node.js.
+                      </p>
+  
+                      <span class="card-badge">Node.js Course</span>
+  
+                  </div>
+              </li>
+
+
+
+
+              <!-- C -->
+              <li>
+                <div class="category-card" style="--color: 351, 83%, 61%">
+
+                  <div class="card-icon" 
+                  style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; 
+                         display: flex; align-items: center; justify-content: center; 
+                         background-color: #ffffff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);">
+                 <img src="{% static 'assets/images/c.png' %}" 
+                      alt="Online Degree Programs" 
+                      style="width: 100%; height: 100%; object-fit: cover;">
+                  </div>
+             
+
+                    <h3 class="h3">
+                        <a href="https://en.cppreference.com/w/c" class="card-title">C programming language</a>
+                    </h3>
+
+                    <p class="card-text">
+                      A foundational language for system-level programming.
+                    </p>
+
+                    <span class="card-badge">C Course</span>
+
+                </div>
+            </li>
+
+
+
+
+            <!-- C++ -->
+            <li>
+              <div class="category-card" style="--color: 229, 75%, 58%">
+
+                <div class="card-icon" 
+                style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; 
+                       display: flex; align-items: center; justify-content: center; 
+                       background-color: #ffffff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);">
+               <img src="{% static 'assets/images/cpp.jpg' %}" 
+                    alt="Online Degree Programs" 
+                    style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+           
+
+                  <h3 class="h3">
+                      <a href="https://en.cppreference.com/w/" class="card-title">C++ programming language</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Powerful for game development, simulations, and system software.
+                  </p>
+
+                  <span class="card-badge">C++ Course</span>
+
+              </div>
+          </li>
+
+
+          <!-- GIT -->
+          <li>
+            <div class="category-card" style="--color: 170, 75%, 41%">
+
+              <div class="card-icon" 
+              style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; 
+                     display: flex; align-items: center; justify-content: center; 
+                     background-color: #ffffff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);">
+             <img src="{% static 'assets/images/git.png' %}" 
+                  alt="Online Degree Programs" 
+                  style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+         
+                <h3 class="h3">
+                    <a href="https://git-scm.com/doc" class="card-title">Git --fast-version-control</a>
+                </h3>
+
+                <p class="card-text">
+                  Version control for tracking changes in your projects
+                </p>
+
+                <span class="card-badge">Git Course</span>
+
+            </div>
+        </li>
+
+
+
+
+        <!-- HTML -->
+        <li>
+          <div class="category-card" style="--color: 170, 75%, 41%">
+
+            <div class="card-icon" 
+            style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; 
+                   display: flex; align-items: center; justify-content: center; 
+                   background-color: #ffffff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);">
+           <img src="{% static 'assets/images/github.jpg' %}" 
+                alt="Online Degree Programs" 
+                style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+       
+              <h3 class="h3">
+                  <a href="https://docs.github.com/en" class="card-title">GitHub cloud-based platform</a>
+              </h3>
+
+              <p class="card-text">
+                Host and collaborate on your projects with GitHub.
+              </p>
+
+              <span class="card-badge">Github Course</span>
+
+          </div>
+      </li>
+
+
+      <!--  Bootstrap -->
+      <li>
+        <div class="category-card" style="--color: 229, 75%, 58%">
+
+          <div class="card-icon" 
+          style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; 
+                 display: flex; align-items: center; justify-content: center; 
+                 background-color: #ffffff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);">
+         <img src="{% static 'assets/images/bootstrap.png' %}" 
+              alt="Online Degree Programs" 
+              style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+     
+
+            <h3 class="h3">
+                <a href="https://getbootstrap.com/docs/" class="card-title">Bootstrap <br> frontend toolkit</a>
+            </h3>
+
+            <p class="card-text">
+              Design responsive websites quickly with Bootstrap.
+            </p>
+
+            <span class="card-badge">Bootstrap Course</span>
+
+        </div>
+    </li>
+
+
+      <!-- REACT -->
+      <li>
+          <div class="category-card" style="--color: 351, 83%, 61%">
+
+            <div class="card-icon" 
+            style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; 
+                   display: flex; align-items: center; justify-content: center; 
+                   background-color: #ffffff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);">
+           <img src="{% static 'assets/images/react.png' %}" 
+                alt="Online Degree Programs" 
+                style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+       
+
+              <h3 class="h3">
+                  <a href="https://reactjs.org/docs/getting-started.html" class="card-title">React components -JavaScript functions</a>
+              </h3>
+
+              <p class="card-text">
+                A JavaScript library for building dynamic UIs.
+              </p>
+
+              <span class="card-badge">react Course</span>
+
+          </div>
+      </li>
+
+      
+      <!-- JAVA -->
+      <li>
+          <div class="category-card" style="--color: 42, 94%, 55%">
+
+            <div class="card-icon" 
+            style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; 
+                   display: flex; align-items: center; justify-content: center; 
+                   background-color: #ffffff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);">
+           <img src="{% static 'assets/images/java.png' %}" 
+                alt="Online Degree Programs" 
+                style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+       
+
+              <h3 class="h3">
+                  <a href="https://developer.mozilla.org/en-US/docs/Glossary/Java" class="card-title">JAVA programming language</a>
+              </h3>
+
+              <p class="card-text">
+                Java is a versatile, object-oriented programming language.
+              </p>
+
+              <span class="card-badge">java Course</span>
+
+          </div>
+      </li>
+
+
+
+
+
+
+              
+    
+            </ul>
+    
+        </div>
+    </section>
+
+    
+    
+
+
+
+     <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" id="about" aria-label="about">
+        <div class="container">
+            <div class="about-content">
+                <p class="section-subtitle">About LearnEase</p>
+                <h2 class="h2 section-title">
+                    Empowering <span class="span">Online Learning</span> with LearnEase
+                </h2>
+                <p class="section-text">
+                    LearnEase is dedicated to transforming education by providing accessible and engaging resources. With over
+                    a decade of experience, we aim to help students thrive in their learning journey, anytime, anywhere.
+                </p>
+                <ul class="about-list">
+                    <li class="about-item">
+                        <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+                        <span>Interactive Learning Tools</span>
+                    </li>
+                    <li class="about-item">
+                        <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+                        <span>Experienced Instructors</span>
+                    </li>
+                    <li class="about-item">
+                        <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+                        <span>24/7 Learning Access</span>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="about-banner">
+                <div class="img-holder">
+                    <img src="{% static 'images/about-banner.jpg' %}" alt="LearnEase Banner" class="img-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+
+    <!-- 
+        - #BLOG
+      -->
+    <!-- Blog Section -->
+{% comment %} <section class="section blog" id="blog" aria-label="blog">
+  <div class="container">
+    <!-- Blog Section Header -->
+    <p class="section-subtitle">LearnEase_Portal</p>
+    <h2 class="h2 section-title">
+      Stay Updated with <span class="span">LearnEase Insights</span>
+    </h2>
+    <p class="section-text">
+      Explore valuable articles designed to enhance your skills and knowledge.
+    </p>
+
+    <!-- Blog Cards Row -->
+    <div class="blog-cards-row">
+      <!-- Blog Card 1 -->
+      <div class="blog-card" style="--card-color: #00b894;">
+        <figure class="card-banner">
+          <img
+            src="{% static 'assets/images/blog-1.jpg' %}"
+            alt="Maximize Learning Productivity with Smart Tools"
+            class="img-cover"
+          />
+        </figure>
+        <div class="card-content">
+          <h3 class="h3 card-title">
+            <a href="#" class="card-link">Maximize Learning Productivity with Smart Tools</a>
+          </h3>
+          <p class="card-text">
+            Explore strategies and tools to make online learning more efficient and engaging.
+          </p>
+          <div class="card-meta">
+            <span class="card-date">
+              <ion-icon name="calendar-outline"></ion-icon> Jan 5, 2024
+            </span>
+            <span class="card-comments">
+              <ion-icon name="chatbubbles-outline"></ion-icon> 15 Comments
+            </span>
+          </div>
+          <a href="{% url 'home' %}" class="btn btn-read-more">Explore</a>
+        </div>
+      </div>
+
+       <!-- Blog Card 3 -->
+       <div class="blog-card" style="--card-color: #003366;">
+        <figure class="card-banner">
+          <img
+            src="{% static 'assets/images/blog-3.jpg' %}"
+            alt="Remote Learning: Best Practices for Success"
+            class="img-cover"
+          />
+        </figure>
+        <div class="card-content">
+          <h3 class="h3 card-title">
+            <a href="#" class="card-link">Remote Learning: Best Practices for Success</a>
+          </h3>
+          <p class="card-text">
+            Learn how to thrive in remote learning environments with expert tips and guidance.
+          </p>
+          <div class="card-meta">
+            <span class="card-date">
+              <ion-icon name="calendar-outline"></ion-icon> Jan 1, 2024
+            </span>
+            <span class="card-comments">
+              <ion-icon name="chatbubbles-outline"></ion-icon> 10 Comments
+            </span>
+          </div>
+          <a href="{% url 'home' %}" class="btn btn-read-more">Explore</a>
+        </div>
+      </div>
+
+      <!-- Blog Card 2 -->
+      <div class="blog-card" style="--card-color: #00d4ff;">
+        <figure class="card-banner">
+          <img
+            src="{% static 'assets/images/blog-2.jpg' %}"
+            alt="Interactive Learning: Gamification in Education"
+            class="img-cover"
+          />
+        </figure>
+        <div class="card-content">
+          <h3 class="h3 card-title">
+            <a href="#" class="card-link">Interactive Learning: Gamification in Education</a>
+          </h3>
+          <p class="card-text">
+            Discover how gamification can revolutionize education and keep learners motivated.
+          </p>
+          <div class="card-meta">
+            <span class="card-date">
+              <ion-icon name="calendar-outline"></ion-icon> Jan 3, 2024
+            </span>
+            <span class="card-comments">
+              <ion-icon name="chatbubbles-outline"></ion-icon> 12 Comments
+            </span>
+          </div>
+          <a href="{% url 'home' %}" class="btn btn-read-more">Explore</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section> {% endcomment %}
+
+<!-- 
+  - #VIDEO
+ -->
+ {% load static %}
+<section class="video-section" style="background: #000d1a; padding: 50px 0; display: flex; justify-content: center; align-items: center; min-height: 100vh;">
+
+    <div class="video-container" style="position: relative; padding: 12px; border-radius: 12px; border: 3px solid #00d4ff; width: 1000px;">
+
+        <!-- Video -->
+        <video width="980" height="550" controls autoplay loop muted playsinline 
+            style="width: 100%; height: auto; object-fit: cover; display: block; border-radius: 10px;">
+            <source src="{% static 'images/video2.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+    </div>
+
+</section>
+
+
+
+
+
+      <!-- 
+        - #STATE
+      -->
+
+      <section class="section stats" aria-label="stats">
+        <div class="container">
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="stats-card" style="--color: 170, 75%, 41%">
+                <h3 class="card-title">29.3k</h3>
+
+                <p class="card-text">Student Enrolled</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="stats-card" style="--color: 351, 83%, 61%">
+                <h3 class="card-title">32.4K</h3>
+
+                <p class="card-text">Class Completed</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="stats-card" style="--color: 260, 100%, 67%">
+                <h3 class="card-title">100%</h3>
+
+                <p class="card-text">Satisfaction Rate</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="stats-card" style="--color: 42, 94%, 55%">
+                <h3 class="card-title">354+</h3>
+
+                <p class="card-text">Top Instructors</p>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+
+
+ <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="footer-top section">
+      <div class="container grid-list">
+  
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <img src="{% static 'assets/images/logo3.jpg' %}" width="162" height="50" alt="Logo">
+          </a>
+          
+          <p class="footer-brand-text">
+            LearnEase is designed to make learning seamless and enjoyable. we provide all the tools you need in one place.          
+          </p>
+  
+          <div class="wrapper">
+            <span class="span">Add:</span>
+            <address class="address">70-80 Upper St Norwich NR2</address>
+          </div>
+  
+          <div class="wrapper">
+            <span class="span">Call:</span>
+            <a href="tel:+011234567890" class="footer-link">+01 123 4567 890</a>
+          </div>
+  
+          <div class="wrapper">
+            <span class="span">Email:</span>
+            <a href="mailto:info@eduweb.com" class="footer-link">learnease@eduweb.com</a>
+          </div>
+        </div>
+  
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title">Online Platform</p>
+          </li>
+          <li><a href="{% url 'sem_temp' %}" class="footer-link">About</a></li>
+          <li><a href="{% url 'home' %}" class="footer-link">Explore</a></li>
+          <li><a href="{% url 'techstack' %}" class="footer-link">TechStack</a></li>
+          <li><a href="{% url 'home' %}" class="footer-link">LearnEase Portal</a></li>
+          <li><a href="{% url 'profile' %}" class="footer-link">Instructor Profile</a></li>
+          <li><a href="{% url 'wiki' %}" class="footer-link">InfoPedia</a></li>
+        </ul>
+  
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Links</p></li>
+          <li><a href="{% url 'login' %}" class="footer-link">Sign In</a></li>
+          <li><a href="{% url 'register' %}" class="footer-link">Registration</a></li>
+          <li><a href="{% url 'pomodoro' %}" class="footer-link">pomodoro-Timer</a></li>
+          <li><a href="{% url 'notes' %}" class="footer-link">QuickNote</a></li>
+          <li><a href="{% url 'schedule' %}" class="footer-link">schedule</a></li>
+          <li><a href="{% url 'dictionary' %}" class="footer-link">WordNavigator</a></li>
+        </ul>
+  
+        <div class="footer-list">
+          <p class="footer-list-title">Contacts</p>
+          <p class="footer-list-text">
+            Enter your email address to register to our newsletter subscription
+          </p>
+  
+          <form action="" class="newsletter-form">
+            <input type="email" name="email_address" placeholder="Your email" required class="input-field">
+            <br><br>
+            <button type="submit" class="btn has-before">
+              
+              <span class="span">Subscribe</span>
+            </button>
+          </form>
+  
+        
+        </div>
+  
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          Copyright 2025 All Rights Reserved by <a href="#" class="copyright-link">@TamannahParmar</a>
+        </p>
+      </div>
+    </div>
+  
+  </footer>
+  
+
+
+
+
+<!-- 
+  - #BACK TO TOP
+-->
+<a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn
+   style="position: fixed; bottom: 30px; right: 30px; background-color: #007BFF; color: white; border-radius: 50%; padding: 15px; text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 9999; cursor: pointer; transition: background-color 0.3s ease;">
+  <ion-icon name="chevron-up" aria-hidden="true" style="font-size: 24px;"></ion-icon>
+</a>
+
+
+
+
+
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const loader = document.querySelector('.loader-container');
+            if (loader) {
+                loader.style.display = 'none'; // Hide the loader
+            }
+            // Enable scrolling
+            document.body.style.overflow = "auto";
+            document.documentElement.style.overflow = "auto";
+        });
+    </script>
+    
+
+  </body>
+</html>
+
+
+{% endblock content %}

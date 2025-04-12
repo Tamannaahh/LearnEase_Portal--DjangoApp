@@ -1,0 +1,60 @@
+{% load static %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Assistant | LearnEase</title>
+  <link rel="stylesheet" href="{% static 'css/assistant.css' %}">
+
+</head>
+<body>
+  <div class="container">
+    <!-- Left Section: Question List -->
+    <div class="question-list">
+      <h3>Welcome to LearnEase Assistant...Ask Me Anything!</h3>
+      <ul>
+        <li>What is LearnEase Portal about?</li>
+        <li>How to add a task?</li>
+        <li>How to view my schedule?</li>
+        <li>What features does LearnEase provide?</li>
+        <li>How to use the Pomodoro Timer?</li>
+        <li>How to create notes?</li>
+        <li>How to view my to-do list?</li>
+        <li>How to use the dictionary?</li>
+        <li>How to search for study material?</li>
+        <li>How to explore new books?</li>
+      </ul>
+    </div>
+
+    
+    <!-- Center Section: Loader and Assistant Output -->
+    <div class="loader-container">
+      
+      <div class="atom">
+        <div class="electron"></div>
+        <div class="electron-alpha"></div>
+        <div class="electron-omega"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Assistant Output Below Circle -->
+  <div class="assistant-output">
+    <p id="user-query">You said: <span class="query-text">...</span></p>
+    <p id="assistant-response">Assistant: <span class="response-text">...</span></p>
+  </div>
+
+  <div class="assistant-controls">
+    <button id="start-btn" class="btn btn-primary">🎤 Speak</button>
+    <button id="stop-btn" class="btn btn-danger">✋ Stop</button>
+  </div>
+  
+  <script src="{% static 'js/assistant.js' %}"></script></body>
+</html>
+
+
+{% endblock content %}

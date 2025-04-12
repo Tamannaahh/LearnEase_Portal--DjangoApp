@@ -1,0 +1,202 @@
+/* Body Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0b1120;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Container Styling */
+.container {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Question List Styling */
+.question-list {
+  width: 300px;
+  background: linear-gradient(135deg, #003366, #002244);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 50%;
+  left: -450px;
+  transform: translateY(-50%);
+  animation: slideIn 1s ease-out;
+}
+
+.question-list h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #00d4ff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.question-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.question-list ul li {
+  margin: 10px 0;
+  padding: 10px;
+  background: linear-gradient(145deg, #005180, #003366);
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.question-list ul li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  background: #00d4ff;
+  color: #0b1120;
+}
+
+/* Loader Container Styling */
+.loader-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6in;
+  width: 6in;
+}
+
+.atom {
+  position: relative;
+  width: 6in;
+  height: 6in;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #ff6ec7, #00d4ff, transparent 70%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  animation: spin 2s linear infinite;
+}
+
+.electron, .electron-alpha, .electron-omega {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff477e, #00d4ff);
+  box-shadow: 0 0 20px rgba(255, 71, 126, 0.8), 0 0 20px rgba(0, 212, 255, 0.8);
+  animation: orbit 2.5s ease-in-out infinite;
+}
+
+.electron {
+  animation: orbit 2.5s ease-in-out infinite;
+}
+
+.electron-alpha {
+  animation: orbit 2.5s ease-in-out infinite reverse;
+}
+
+.electron-omega {
+  top: 50%;
+  animation: orbit 2.5s ease-in-out infinite reverse;
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit {
+  from {
+      transform: translate(-50%, 0) rotate(0deg);
+  }
+  to {
+      transform: translate(-50%, 0) rotate(360deg);
+  }
+}
+
+/* Assistant Output */
+.assistant-output {
+  text-align: right;
+  color: white;
+  margin-top: 600px;
+}
+
+.assistant-output p {
+  margin: 5px 0;
+}
+
+/* Assistant Controls */
+.assistant-controls {
+  position: fixed;
+  top: 300px;
+  right: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+}
+
+/* Button Styles */
+.btn {
+  padding: 20px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00d4ff, #0055ff);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.4);
+  background: linear-gradient(135deg, #00b894, #0085d1);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #ff4d4d, #d40000);
+  color: white;
+}
+
+.btn-danger:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 77, 77, 0.4);
+  background: linear-gradient(135deg, #e60000, #b30000);
+}
+
+/* Keyframes for Animations */
+@keyframes slideIn {
+  from {
+      left: -500px;
+      opacity: 0;
+  }
+  to {
+      left: 50px;
+      opacity: 1;
+  }
+}
